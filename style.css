@@ -31,3 +31,8 @@ p{
   margin: 3px 0;
   font-size: 17px;
 }
+
+span {
+  position: absolute;
+  right: 20px;
+}
