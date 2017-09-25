@@ -7,18 +7,20 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
+  <!-- mainCtrl link to body -->
   <body ng-controller="mainCtrl">
     
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
+      <!-- form commit function -->
       <form ng-submit="postMessage(message)">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
+      <!-- messages container, date format readable -->
       <div class="messages-container">
+        <h1>Comments</h1>
         <p ng-repeat="message in messages ">
-          {{message.message}}
-          <br>
-          {{message.createdAt}}
+          {{message.message}} <span>{{message.createdAt | date: "medium"}}</span>
         </p>
       </div>
     </div>
@@ -27,6 +29,7 @@
     <script src="js/app.js"></script>
     <script src="js/mainCtrl.js"></script>
     <script src="js/messageService.js"></script>
+
   </body>
 
 </html>
